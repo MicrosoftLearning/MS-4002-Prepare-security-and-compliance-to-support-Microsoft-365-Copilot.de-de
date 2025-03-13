@@ -137,65 +137,61 @@ Wie in Ihrer Schulung erwähnt wurde, gibt es drei Möglichkeiten, die MFA zu im
 
 Adatum hat Holly angewiesen, die MFA für alle Microsoft 365-Benutzer zu aktivieren – sowohl intern als auch extern. Zum Testen der Microsoft 365-Pilotprojektimplementierung von Adatum möchte Holly jedoch die Mitglieder der M365-Pilotprojektgruppe davon ausschließen, dass die MFA zur Anmeldung verwendet werden muss. Sobald das Pilotprojekt abgeschlossen ist, plant Holly, die Richtlinie zu aktualisieren, indem der Ausschluss dieser Gruppe von der MFA-Anforderung aufgehoben wird. Die Richtlinie enthält auch zwei weitere Anforderungen. Sie schreibt die MFA für alle Cloud-Apps vor und erzwingt diese auch dann, wenn sich ein Benutzer von einem vertrauenswürdigen Standort anmeldet. 
 
-1. In der vorherigen Lab-Übung haben Sie auf LON-DC1 gearbeitet. In dieser Aufgabe arbeiten Sie wieder auf Ihrem Client 1-Computer. <br/>
-
-    Wechseln Sie zu **LON-CL1**.
-
-2. Auf der LON-CL1 VM sollte das **Microsoft 365 Admin Center** in Ihrem Microsoft Edge-Browser noch von einer früheren Aufgabe geöffnet sein. Sie sollten bei Microsoft 365 als **Holly Dickson** angemeldet sein.
+1. Auf der LON-CL1 VM sollte das **Microsoft 365 Admin Center** in Ihrem Microsoft Edge-Browser noch von einer früheren Aufgabe geöffnet sein. Sie sollten bei Microsoft 365 als **Holly Dickson** angemeldet sein.
    
-3. Wählen Sie im **Microsoft 365 Admin Center** unter dem Abschnitt **Admin Center** im Navigationsbereich die Option **Identität** aus. Dadurch wird das Microsoft Entra Admin Center auf einer neuen Browserregisterkarte geöffnet. Wenn das Fenster **Konto auswählen** angezeigt wird, wählen Sie **Holly Dicksons Konto** aus.
+2. Wählen Sie im **Microsoft 365 Admin Center** unter dem Abschnitt **Admin Center** im Navigationsbereich die Option **Identität** aus. Dadurch wird das Microsoft Entra Admin Center auf einer neuen Browserregisterkarte geöffnet. Wenn das Fenster **Konto auswählen** angezeigt wird, wählen Sie **Holly Dicksons Konto** aus.
 
-4. Wählen Sie im **Microsoft Entra Admin Center** im Navigationsbereich die Option **Schutz** und dann **Bedingter Zugriff** aus.
+3. Wählen Sie im **Microsoft Entra Admin Center** im Navigationsbereich die Option **Schutz** und dann **Bedingter Zugriff** aus.
 
-5. Wählen Sie auf der Seite **Bedingter Zugriff | Übersicht** im mittleren Navigationsbereich **Richtlinien** aus.
+4. Wählen Sie auf der Seite **Bedingter Zugriff | Übersicht** im mittleren Navigationsbereich **Richtlinien** aus.
 
-6. Wählen Sie auf der Seite **Bedingter Zugriff | Richtlinien** in der Menüleiste oben auf der Seite **+ Neue Richtlinie erstellen**.
+5. Wählen Sie auf der Seite **Bedingter Zugriff | Richtlinien** in der Menüleiste oben auf der Seite **+ Neue Richtlinie erstellen**.
 
-7. Geben Sie im Fenster **Neue Richtlinie für bedingten Zugriff** den Text **MFA für alle Microsoft 365-Benutzer** im Feld **Name** ein.
+6. Geben Sie im Fenster **Neue Richtlinie für bedingten Zugriff** den Text **MFA für alle Microsoft 365-Benutzer** im Feld **Name** ein.
 
-8. Zunächst definieren Sie die MFA-Anforderung für Benutzer. Wählen Sie unter der Gruppe **Benutzer** die Option **0 Benutzer und Gruppen ausgewählt** aus. Dadurch werden zwei Registerkarten angezeigt: **Einschließen** und **Ausschließen**.
+7. Zunächst definieren Sie die MFA-Anforderung für Benutzer. Wählen Sie unter der Gruppe **Benutzer** die Option **0 Benutzer und Gruppen ausgewählt** aus. Dadurch werden zwei Registerkarten angezeigt: **Einschließen** und **Ausschließen**.
 
-9. Wählen Sie auf der Registerkarte **Einschließen** die Option **Alle Benutzer** aus. Beachten Sie die angezeigte Warnmeldung. Diese werden Sie in den nächsten beiden Schritten beheben.
+8. Wählen Sie auf der Registerkarte **Einschließen** die Option **Alle Benutzer** aus. Beachten Sie die angezeigte Warnmeldung. Diese werden Sie in den nächsten beiden Schritten beheben.
 
-10. Wählen Sie die Registerkarte **Ausschließen** aus. Um eine Systemsperre zu vermeiden, wie in der vorherigen Warnmeldung angegeben, sollten Sie Ihre globalen Administratoren ausschließen – in diesem Fall Holly. Holly möchte auch die anderen Microsoft 365-Pilotprojektgruppenmitglieder zur Beschleunigung der Tests ausschließen. Sobald Microsoft 365 bei ADatum live geht, entfernt Holly die Pilotprojektgruppe aus der Liste „Ausschließen“ in dieser Richtlinie für bedingten Zugriff und schließt nur sich selbst, den MOD Administrator, und mehrere andere globale Administratoren aus. Jetzt möchte Holly jedoch die gesamte Pilotprojektgruppe ausschließen. <br/>
+9. Wählen Sie die Registerkarte **Ausschließen** aus. Um eine Systemsperre zu vermeiden, wie in der vorherigen Warnmeldung angegeben, sollten Sie Ihre globalen Administratoren ausschließen – in diesem Fall Holly. Holly möchte auch die anderen Microsoft 365-Pilotprojektgruppenmitglieder zur Beschleunigung der Tests ausschließen. Sobald Microsoft 365 bei ADatum live geht, entfernt Holly die Pilotprojektgruppe aus der Liste „Ausschließen“ in dieser Richtlinie für bedingten Zugriff und schließt nur sich selbst, den MOD Administrator, und mehrere andere globale Administratoren aus. Jetzt möchte Holly jedoch die gesamte Pilotprojektgruppe ausschließen. <br/>
 
     Aktivieren Sie dazu das Kontrollkästchen **Benutzer und Gruppen**. 
 
-11. Wählen Sie im angezeigten Fenster **Ausgeschlossene Benutzer und Gruppen auswählen** die Microsoft 365-Pilotprojektgruppe aus. Die Registerkarte **Alle** wird standardmäßig angezeigt. Um die Pilotprojektgruppe schnell zu finden, wählen Sie die Registerkarte **Gruppen** aus. Aktivieren Sie in der Liste der aktiven Gruppen das Kontrollkästchen neben der Gruppe **M365 pilot project**, und aktivieren Sie dann die Schaltfläche **Auswählen** unten im Fenster. Beachten Sie im Fenster **Neue Richtlinie für bedingten Zugriff** die Meldung, die unter dem Abschnitt **Benutzer** angezeigt wird. 
+10. Wählen Sie im angezeigten Fenster **Ausgeschlossene Benutzer und Gruppen auswählen** die Microsoft 365-Pilotprojektgruppe aus. Die Registerkarte **Alle** wird standardmäßig angezeigt. Um die Pilotprojektgruppe schnell zu finden, wählen Sie die Registerkarte **Gruppen** aus. Aktivieren Sie in der Liste der aktiven Gruppen das Kontrollkästchen neben der Gruppe **M365 pilot project**, und aktivieren Sie dann die Schaltfläche **Auswählen** unten im Fenster. Beachten Sie im Fenster **Neue Richtlinie für bedingten Zugriff** die Meldung, die unter dem Abschnitt **Benutzer** angezeigt wird. 
 
-12. Sie definieren nun die MFA-Anforderung für alle Cloud-Apps. Wählen Sie unter dem Abschnitt **Zielressourcen** die Option **Keine Zielressourcen ausgewählt** aus. Dadurch werden zwei Registerkarten angezeigt: **Einschließen** und **Ausschließen**.
+11. Sie definieren nun die MFA-Anforderung für alle Cloud-Apps. Wählen Sie unter dem Abschnitt **Zielressourcen** die Option **Keine Zielressourcen ausgewählt** aus. Dadurch werden zwei Registerkarten angezeigt: **Einschließen** und **Ausschließen**.
 
-13. Wählen Sie das Dropdownfeld **Wählen Sie aus, worauf diese Richtlinie angewendet werden soll.** aus, um die verschiedenen Optionen im Dropdownmenü anzuzeigen. Wählen Sie **Ressourcen (ehemals Cloud-Apps)**. 
+12. Wählen Sie das Dropdownfeld **Wählen Sie aus, worauf diese Richtlinie angewendet werden soll.** aus, um die verschiedenen Optionen im Dropdownmenü anzuzeigen. Wählen Sie **Ressourcen (ehemals Cloud-Apps)**. 
 
-14. Beachten Sie auf der Registerkarte **Einschließen**, dass die Standardeinstellung **Keine** ist. Wenn Sie diese Einstellung nicht geändert haben, benötigt keine der Cloud-Apps die MFA – und das schließt Microsoft 365 ein. Selbst wenn Sie diese Richtlinie erstellt und die Option ausgewählt haben, die MFA für alle Benutzer zu erzwingen, aber diese Einstellung unter **Zielressourcen** auf **Keine** festgelegt ist, dann müsste kein Benutzer, der sich bei Microsoft 365 anmeldet, MFA verwenden. <br/>
+13. Beachten Sie auf der Registerkarte **Einschließen**, dass die Standardeinstellung **Keine** ist. Wenn Sie diese Einstellung nicht geändert haben, benötigt keine der Cloud-Apps die MFA – und das schließt Microsoft 365 ein. Selbst wenn Sie diese Richtlinie erstellt und die Option ausgewählt haben, die MFA für alle Benutzer zu erzwingen, aber diese Einstellung unter **Zielressourcen** auf **Keine** festgelegt ist, dann müsste kein Benutzer, der sich bei Microsoft 365 anmeldet, MFA verwenden. <br/>
 
     Wählen Sie unter der Registerkarte **Einschließen** die Option **Ressourcen auswählen**. Dadurch werden zwei Abschnitte angezeigt: **Filter bearbeiten** und **Auswählen**. Wählen Sie unter dem Abschnitt **Auswählen** die Option **Keine** aus. 
 
-15. Im Bereich **Ressourcen auswählen**, der angezeigt wird, scrollen Sie durch die Liste der Apps, um alle weiteren Apps zu sehen, für die Sie MFA benötigen könnten. **Wählen Sie KEINE der Apps aus.** Wir scrollen durch diese Liste, um ein Gefühl dafür zu bekommen, wie präzise Sie vorgehen können, falls Sie beschließen, die MFA in Ihrer echten Anwendung auf bestimmte Apps zu beschränken.  <br/>
+14. Im Bereich **Ressourcen auswählen**, der angezeigt wird, scrollen Sie durch die Liste der Apps, um alle weiteren Apps zu sehen, für die Sie MFA benötigen könnten. **Wählen Sie KEINE der Apps aus.** Wir scrollen durch diese Liste, um ein Gefühl dafür zu bekommen, wie präzise Sie vorgehen können, falls Sie beschließen, die MFA in Ihrer echten Anwendung auf bestimmte Apps zu beschränken.  <br/>
 
     Für Adatum möchte Holly die MFA für alle Cloud-Apps erzwingen, was in der Regel ein häufigeres Geschäftsszenario ist als die Auswahl bestimmter Apps. Wählen Sie auf der Registerkarte **Einschließen** die Option **Alle Ressourcen (ehemals ‚Alle Cloud-Apps‘)**. Adatum schließt keine Cloud-Apps aus der Multi-Faktor-Authentifizierung aus. Sie können die Registerkarte **Ausschließen** auswählen, um die dortigen Optionen zu sehen. Sie funktioniert im Wesentlichen genauso wie die Registerkarte **Einschließen**. Sie können diese Registerkarte anzeigen, aber KEINE Cloud-Apps zum Ausschluss auswählen. 
 
-16. Schließlich definieren Sie die MFA-Anforderung für alle Benutzeranmeldungsstandorte. In einigen Szenarios schreiben Organisationen möglicherweise nur die MFA vor, wenn sich ein Benutzer von einem nicht vertrauenswürdigen Standort anmeldet. Adatum möchte jedoch die MFA für alle eingeschlossenen Benutzer erzwingen, unabhängig davon, von wo aus sie sich anmelden. <br/>
+15. Schließlich definieren Sie die MFA-Anforderung für alle Benutzeranmeldungsstandorte. In einigen Szenarios schreiben Organisationen möglicherweise nur die MFA vor, wenn sich ein Benutzer von einem nicht vertrauenswürdigen Standort anmeldet. Adatum möchte jedoch die MFA für alle eingeschlossenen Benutzer erzwingen, unabhängig davon, von wo aus sie sich anmelden. <br/>
 
     Wählen Sie unter **Bedingungen** die Option **0 Bedingungen ausgewählt** aus. Dadurch wird eine Liste der potenziellen Bedingungen angezeigt, auf die die Richtlinie überprüft. Wählen Sie für diese Labübung unter der Bedingung **Standorte** die Option **Nicht konfiguriert** aus. Dadurch werden die Umschaltfläche **Konfigurieren** und zwei Registerkarten angezeigt: **Einschließen** und **Ausschließen**. Beide Registerkarten sind derzeit deaktiviert.
 
-17. Legen Sie die Umschaltfläche **Konfigurieren** auf **Ja**fest, wodurch die beiden Registerkarten aktiviert werden. 
+16. Legen Sie die Umschaltfläche **Konfigurieren** auf **Ja**fest, wodurch die beiden Registerkarten aktiviert werden. 
 
-18. Überprüfen Sie auf der Registerkarte **Einschließen**, ob **Alle Netzwerke und Standorte** ausgewählt ist (wählen Sie die Option bei Bedarf aus). Wählen Sie die Registerkarte **Ausschließen** aus. Wenn Ihre Organisation bestimmte IP-Adressen oder Adressbereiche als „vertrauenswürdig“ erkennt, können Sie die MFA-Anforderung ausschließen, wenn sich ein Benutzer von einem dieser Standorte anmeldet. Adatum möchte jedoch die MFA für alle Benutzeranmeldeversuche erzwingen, unabhängig von ihrem Standort. Das gilt sowohl für interne als auch für externe Benutzeranmeldungen. Überprüfen Sie, ob die Option **Ausgewählte Netzwerke und Standorte** ausgewählt ist, und vergewissern Sie sich, dass im Abschnitt **Auswählen** **Keine** steht. Indem keine Standorte angegeben werden, stellt diese Einstellung sicher, dass keine Standorte von der MFA ausgeschlossen werden. 
+17. Überprüfen Sie auf der Registerkarte **Einschließen**, ob **Alle Netzwerke und Standorte** ausgewählt ist (wählen Sie die Option bei Bedarf aus). Wählen Sie die Registerkarte **Ausschließen** aus. Wenn Ihre Organisation bestimmte IP-Adressen oder Adressbereiche als „vertrauenswürdig“ erkennt, können Sie die MFA-Anforderung ausschließen, wenn sich ein Benutzer von einem dieser Standorte anmeldet. Adatum möchte jedoch die MFA für alle Benutzeranmeldeversuche erzwingen, unabhängig von ihrem Standort. Das gilt sowohl für interne als auch für externe Benutzeranmeldungen. Überprüfen Sie, ob die Option **Ausgewählte Netzwerke und Standorte** ausgewählt ist, und vergewissern Sie sich, dass im Abschnitt **Auswählen** **Keine** steht. Indem keine Standorte angegeben werden, stellt diese Einstellung sicher, dass keine Standorte von der MFA ausgeschlossen werden. 
 
-19. Wählen Sie unter dem Abschnitt **Zugriffssteuerungen** unter der Gruppe **Gewähren** die Option **0 Steuerungen ausgewählt** aus. Dadurch wird der Bereich **Erteilen** angezeigt.
+18. Wählen Sie unter dem Abschnitt **Zugriffssteuerungen** unter der Gruppe **Gewähren** die Option **0 Steuerungen ausgewählt** aus. Dadurch wird der Bereich **Erteilen** angezeigt.
 
-20. Überprüfen Sie im angezeigten Bereich **Gewähren**, ob die Option **Zugriff gewähren** ausgewählt ist. Wählen Sie sie bei Bedarf aus. Beachten Sie alle verfügbaren Zugriffssteuerungen, die mit dieser Richtlinie aktiviert werden können. Diese Richtlinie erfordert nur MFA. Aktivieren Sie daher das Kontrollkästchen **Mehrstufige Authentifizierung erforderlich**. Wählen Sie die Schaltfläche **Auswählen** unten im Bereich **Gewähren** aus, die den Bereich schließt. 
+19. Überprüfen Sie im angezeigten Bereich **Gewähren**, ob die Option **Zugriff gewähren** ausgewählt ist. Wählen Sie sie bei Bedarf aus. Beachten Sie alle verfügbaren Zugriffssteuerungen, die mit dieser Richtlinie aktiviert werden können. Diese Richtlinie erfordert nur MFA. Aktivieren Sie daher das Kontrollkästchen **Mehrstufige Authentifizierung erforderlich**. Wählen Sie die Schaltfläche **Auswählen** unten im Bereich **Gewähren** aus, die den Bereich schließt. 
 
-21. Wählen Sie unten im Fenster **Neue Richtlinie für bedingten Zugriff** im Feld **Richtlinie aktivieren** die Option **Ein** aus.
+20. Wählen Sie unten im Fenster **Neue Richtlinie für bedingten Zugriff** im Feld **Richtlinie aktivieren** die Option **Ein** aus.
 
-22. Beachten Sie die Warnmeldung und Optionen, die unten auf der Seite angezeigt werden, die Sie davor warnen, sich nicht auszusperren. Wählen Sie die Option **Ich habe verstanden, dass mein Konto von dieser Richtlinie betroffen ist. Ich möchte dennoch fortfahren.** aus. Tatsächlich wird Holly nicht betroffen sein, da sie Mitglied der M365-Pilotprojektgruppe ist, die von dieser Richtlinie ausgeschlossen ist.
+21. Beachten Sie die Warnmeldung und Optionen, die unten auf der Seite angezeigt werden, die Sie davor warnen, sich nicht auszusperren. Wählen Sie die Option **Ich habe verstanden, dass mein Konto von dieser Richtlinie betroffen ist. Ich möchte dennoch fortfahren.** aus. Tatsächlich wird Holly nicht betroffen sein, da sie Mitglied der M365-Pilotprojektgruppe ist, die von dieser Richtlinie ausgeschlossen ist.
 
-23. Wählen Sie die Schaltfläche **Erstellen** aus, um die Richtlinie zu erstellen.
+22. Wählen Sie die Schaltfläche **Erstellen** aus, um die Richtlinie zu erstellen.
 
-24. Überprüfen Sie im angezeigten Fenster **Bedingter Zugriff | Richtlinien**, ob die Richtlinie **MFA für alle Microsoft 365-Benutzer** angezeigt wird und der **Status ** auf **Ein** festgelegt ist.
+23. Überprüfen Sie im angezeigten Fenster **Bedingter Zugriff | Richtlinien**, ob die Richtlinie **MFA für alle Microsoft 365-Benutzer** angezeigt wird und der **Status ** auf **Ein** festgelegt ist.
 
-25. Bleiben Sie bei LON-CL1 angemeldet, und lassen alle Ihre Microsoft Edge-Browserregisterkarten für die nächste Aufgabe geöffnet.
+24. Bleiben Sie bei LON-CL1 angemeldet, und lassen alle Ihre Microsoft Edge-Browserregisterkarten für die nächste Aufgabe geöffnet.
 
 
 ### Aufgabe 4: Testen der MFA für einen eingeschlossenen und ausgeschlossenen Benutzer
@@ -331,13 +327,13 @@ Der CTO ist bestrebt, Smart Lockout zu implementieren, da das Feature Angreifer 
 
 16. Schließen Sie im Browser die Registerkarte **Kennwort ändern**. 
 
-17. Sie werden nun die Sperrschwellenfunktionalität testen. Dafür verwenden Sie das Konto von Laura Atkin, das Sie in einer früheren Lab-Übung erstellt haben. Wählen Sie das Benutzersymbol von Holly Dickson in der oberen rechten Ecke des Bildschirms aus, und wählen Sie im daraufhin angezeigten Menü **Abmelden** aus.  
+17. Sie werden nun die Sperrschwellenfunktionalität testen. Sie werden dies über das Konto von Adele Vance tun. Wählen Sie das Benutzersymbol von Holly Dickson in der oberen rechten Ecke des Bildschirms aus, und wählen Sie im daraufhin angezeigten Menü **Abmelden** aus.  
 
 18. Nachdem Sie sich als Holly abgemeldet haben, wird das Fenster **Konto auswählen** auf der Registerkarte **Bei Microsoft Entra anmelden** angezeigt. Die bewährte Methode, wenn Sie sich von einem Microsoft-Onlinedienst als ein Benutzer abmelden und sich als ein anderer anmelden, besteht darin, alle Browserregisterkarten zu schließen, mit Ausnahme der Registerkarte **Abmelden** oder **Anmelden**. Schließen Sie in diesem Fall die anderen Registerkarten, und lassen Sie die Registerkarte **Anmelden** geöffnet.  <br/>
 
     Wählen Sie im Fenster **Konto auswählen** die Option **Anderes Konto verwenden** aus. 
 
-19. Geben Sie im Fenster **Anmelden** **laura@xxxxxZZZZZZ.onmicrosoft.com** ein, wobei xxxxxZZZZZZ das vom Labhostinganbieter zugeteilte Mandantenpräfix ist, und wählen Sie dann **Weiter** aus. 
+19. Geben Sie im Fenster **Anmelden** **adelev@xxxxxZZZZZZ.onmicrosoft.com** ein, wobei xxxxxZZZZZZ das vom Labhostinganbieter zugeteilte Mandantenpräfix ist, und wählen Sie dann **Weiter** aus. 
 
 20. Geben Sie im Fenster **Kennwort eingeben** eine beliebige Mischung aus Buchstaben und Zahlen ein, und wählen Sie dann **Anmelden** aus. Sie sehen, dass die Fehlermeldung „Ungültiges Kennwort“ angezeigt wird. 
 
@@ -345,14 +341,14 @@ Der CTO ist bestrebt, Smart Lockout zu implementieren, da das Feature Angreifer 
     
     Da Sie den **Schwellenwert für Sperre** auf **3** festgelegt haben, sollten Sie eine Fehlermeldung erhalten, die angibt, dass dieses Konto nach dem dritten fehlgeschlagenen Anmeldeversuch gesperrt ist. <br/>
 
-    **Hinweis:** Wenn Sie diese Sperrmeldung nach dem dritten Versuch nicht erhalten, hat das System diese Sperrschwellenänderung noch nicht im gesamten Dienst angewendet. Es kann mehrere Minuten dauern, bis die Änderung in Kraft tritt. Warten Sie ein paar Minuten, und melden Sie sich dann erneut mit einem falschen Kennwort an. Beim Testen dieses Labs gab es unterschiedliche Ergebnisse. Die Änderung wurde manchmal fast sofort überall angewendet, sodass Sie nach dem dritten Anmeldeversuch gesperrt werden. In anderen Fällen dauerte es zwischen fünf und zehn Minuten, bevor die Sperrmeldung angezeigt wird. Fahren Sie mit diesem Vorgang fort, bis Sie die Meldung zur Kontosperrung erhalten. Zu diesem Zeitpunkt wird Lauras Konto vorübergehend gesperrt, um unbefugten Zugriff zu verhindern.
+    **Hinweis:** Wenn Sie diese Sperrmeldung nach dem dritten Versuch nicht erhalten, hat das System diese Sperrschwellenänderung noch nicht im gesamten Dienst angewendet. Es kann mehrere Minuten dauern, bis die Änderung in Kraft tritt. Warten Sie ein paar Minuten, und melden Sie sich dann erneut mit einem falschen Kennwort an. Beim Testen dieses Labs gab es unterschiedliche Ergebnisse. Die Änderung wurde manchmal fast sofort überall angewendet, sodass Sie nach dem dritten Anmeldeversuch gesperrt werden. In anderen Fällen dauerte es zwischen fünf und zehn Minuten, bevor die Sperrmeldung angezeigt wird. Fahren Sie mit diesem Vorgang fort, bis Sie die Meldung „Gesperrt“ erhalten. Zu diesem Zeitpunkt wird Adeles Konto vorübergehend gesperrt, um unbefugten Zugriff zu verhindern.
 
-21. Sie können sich erst nach Ablauf der zuvor festgelegten **90-sekündigen Sperrdauer** wieder als Laura anmelden. <br/>
+21. Sie können sich erst nach Ablauf der zuvor festgelegten **90-sekündigen Sperrzeit** wieder als Adele anmelden. <br/>
 
-    Nachdem Sie gesperrt wurden, warten Sie 90 Sekunden, und melden Sie sich dann wieder als **laura@xxxxxZZZZZZ.onmicrosoft.com** an. Hierbei ist xxxxxZZZZZZ das Mandantenpräfix, das Ihnen vom Labhostinganbieter zugewiesen wurde. Geben Sie im Feld **Kennwort** das Kennwort von Laura ein. Dies ist das neue Benutzerkennwort, das Sie dem Konto von Laura bei der Erstellung zugewiesen haben. 
+    Nachdem Sie gesperrt wurden, warten Sie 90 Sekunden, und melden Sie sich dann wieder als **adelev@xxxxxZZZZZZ.onmicrosoft.com** an. Hierbei ist xxxxxZZZZZZ das Mandantenpräfix, das Ihnen vom Labhostinganbieter zugewiesen wurde. Geben Sie im Feld **Kennwort** das Kennwort von Adele ein, das Sie von Ihrem Lab-Hosting-Anbieter erhalten haben. 
 
-22. Da MFA für alle Benutzenden aktiviert ist, mit Ausnahme der Mitglieder der M365-Pilotprojektgruppe (zu denen Laura nicht gehört), wird das Fenster **Weitere Informationen erforderlich** angezeigt, damit Sie den MFA-Prozess für Laura abschließen können. Dies ist der Nachweis, dass Ihr Anmeldeversuch mit Lauras tatsächlichem Kennwort erfolgreich war.  <br>
+22. Da MFA für alle Benutzenden aktiviert ist, mit Ausnahme der Mitglieder der M365-Pilotprojektgruppe (zu der Adele nicht gehört), wird ein Fenster **Weitere Informationen erforderlich** angezeigt, damit Sie den MFA-Prozess für Adele abschließen können. Dies ist der Nachweis, dass Ihr Anmeldeversuch mit Adeles tatsächlichem Kennwort erfolgreich war.  <br>
 
-    **Hinweis:** Sie müssen den MFA-Prozess für Laura NICHT abschließen, da dies Ihre letzte Lab-Übung mit dem LON-DC1-Domänencontroller ist. Sie können alle Anwendungen auf LON-DC1 schließen.
+    **Hinweis:** Sie müssen den MFA-Prozess für Adele NICHT abschließen, da dies Ihre letzte Übung im Lab mit dem LON-DC1-Domänencontroller ist. Sie können alle Anwendungen auf LON-DC1 schließen.
 
 # Fahren Sie mit „Lab 2, Übung 2“ fort.
