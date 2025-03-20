@@ -10,7 +10,7 @@ In der vorherigen Übung haben Sie eine benutzerdefinierte DLP-Richtlinie erstel
 
 In dieser Aufgabe senden Sie eine E-Mail von Holly Dickson an Lynne Robbins, die die erste Regel (einzelne IP-Adresse) testet. Wenn diese Regel ausgelöst wird, wird ein E-Mail-Richtlinientipp im Outlook-Postfach des Absenders bzw. der Absenderin angezeigt, der ihn oder sie darüber informiert, dass die E-Mail vertrauliche Daten enthält. Diese Person erhält auch eine E-Mail-Benachrichtigung, die E-Mail wird jedoch weiterhin an die Empfangenden gesendet.
 
-1. Auf LON-CL1 sollten Sie in Ihrem Edge-Browser weiterhin bei Microsoft 365 als **Holly Dickson**angemeldet sein. 
+1. Auf LON-CL1 sollten Sie in Ihrem Edge-Browser weiterhin bei Microsoft 365 als **Holly Dickson** angemeldet sein. 
 
 2. Sie senden jetzt eine E-Mail von Holly an Lynne Robbins, und Sie fügen eine IP-Adresse in den Textkörper der E-Mail ein. <br/>
 
@@ -61,7 +61,7 @@ In der vorherigen Übung haben Sie eine benutzerdefinierte DLP-Richtlinie erstel
     
 In dieser Aufgabe senden Sie eine E-Mail von Holly Dickson an Lynne Robbins, die die zweite Regel testet (mehrere IP-Adressen). Wenn diese Regel ausgelöst wird, wird ein E-Mail-Richtlinientipp im Outlook-Postfach des Absenders bzw. der Absenderin angezeigt, der ihn oder sie darüber informiert, dass die E-Mail vertrauliche Daten enthält. Die E-Mail wird blockiert, aber der Absender bzw. die Absenderin kann die blockierte E-Mail außer Kraft setzen und das Senden zulassen.  
 
-1. Auf LON-CL1 sollten Sie in Ihrem Edge-Browser weiterhin bei Microsoft 365 als **Holly Dickson**angemeldet sein. 
+1. Auf LON-CL1 sollten Sie in Ihrem Edge-Browser weiterhin bei Microsoft 365 als **Holly Dickson** angemeldet sein. 
     
 2. Sie senden nun eine zweite Nachricht von Holly an Lynne, die mehrere IP-Adressen enthält. Wiederholen Sie den Vorgang wie zuvor, um eine E-Mail an Lynne Robbins mit den folgenden Informationen zu erstellen: 
 
