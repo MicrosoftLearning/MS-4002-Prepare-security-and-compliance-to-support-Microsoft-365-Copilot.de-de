@@ -8,7 +8,7 @@ In dieser Aufgabe erstellen Sie eine Richtlinie zur Verhinderung von Datenverlus
 
 Die Richtlinie enthält zwei Regeln oder Aktionen, von denen jede von der Anzahl der IP-Adressen in der Nachricht abhängig ist. Wenn die Nachricht eine IP-Adresse enthält, benachrichtigt die Richtlinie Personen mit einem Richtlinientipp und sendet weiterhin eine E-Mail an die Nachricht. Enthält der Inhalt jedoch zwei oder mehr IP-Adressen, wird die Nachricht blockiert, eine E-Mail mit hoher Sensibilitätsstufe zu dem Vorfall an die Absendenden gesendet und ein Richtlinientipp angezeigt, der es den Absendenden ermöglicht, die E-Mail-Blockierung aufzuheben, wenn sie im Richtlinientipp eine geschäftliche Begründung angeben.
 
-1. Auf LON-CL1 sollten Sie in Ihrem Edge-Browser weiterhin bei Microsoft 365 als **Holly Dickson**angemeldet sein. 
+1. Auf LON-CL1 sollten Sie in Ihrem Edge-Browser weiterhin bei Microsoft 365 als **Holly Dickson** angemeldet sein. 
 
 2. In **Microsoft Edge** sollte das Microsoft Purview-Portal weiterhin geöffnet sein. Wenn nicht, öffnen Sie dann eine neue Registerkarte, und navigieren Sie zu **https://compliance.microsoft.com**.
 
@@ -131,9 +131,9 @@ Das Problem mit diesem Feature besteht darin, dass DLP-Richtlinien die Word-Date
 
 Um diese Einstellung zu deaktivieren, müssen Sie im Microsoft Intune Admin Center eine Richtlinie für Office-Apps erstellen. In der von Ihnen erstellten Richtlinie fügen Sie die Einstellung **„An Kindle senden“ deaktivieren** hinzu und aktivieren dann diese Einstellung. Wenn Sie diese Einstellung in der Richtlinie aktivieren, wird das Feature **An Kindle senden** deaktiviert, sobald Sie die Richtlinie erstellt haben. Ab diesem Zeitpunkt können die Benutzenden keine Word-Dokumente mehr an ihre Kindle-Bibliothek senden.
 
-**Hinweis:** Dieses Problem ist etwas, das Sie in Ihren realen Microsoft 365-Bereitstellungen berücksichtigen sollten. Weitere Informationen zu dem **An Kindle senden**-Feature finden Sie unter https://support.microsoft.com/en-us/office/send-to-kindle-a53d880d-9952-4bf1-abc5-6bce8db5a273.
+**Hinweis:** Dieses Problem ist etwas, das Sie in Ihren realen Microsoft 365-Bereitstellungen berücksichtigen sollten. Weitere Informationen zu dem **An Kindle senden**-Feature finden Sie unter https://support.microsoft.com/office/send-to-kindle-a53d880d-9952-4bf1-abc5-6bce8db5a273.
 
-1. Auf LON-CL1 sollten Sie in Ihrem Edge-Browser weiterhin bei Microsoft 365 als **Holly Dickson**angemeldet sein. 
+1. Auf LON-CL1 sollten Sie in Ihrem Edge-Browser weiterhin bei Microsoft 365 als **Holly Dickson** angemeldet sein. 
 
 2. Suchen Sie in Ihrem Edge-Browser die Registerkarte **Microsoft 365 Admin Center**. Wählen Sie im Navigationsbereich des Microsoft 365 Admin Centers unter der Gruppe **Admin Center** die Option **Endpoint Manager** aus.
 
